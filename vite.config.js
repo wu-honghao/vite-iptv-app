@@ -14,4 +14,5 @@ export default defineConfig({
       resolvers: [AntDesignVueResolver()],
     }),
   ],
+  base: "/vite-iptv-app/",
 });

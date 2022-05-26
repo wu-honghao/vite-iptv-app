@@ -1,76 +1,83 @@
 <template>
   <div id="app-tv-play-page">
+    <!-- 页头 -->
     <a-page-header
       style="border: 1px solid rgb(235, 237, 240)"
       title="IPTV Details"
-      sub-title="Welcome to IPTV Details"
+      :sub-title="playerInfo.length ? playerInfo[0].name : 'random'"
       @back="returnHome"
     />
 
-    <div class="example" v-if="isNotPlay">
-      <a-spin />
-    </div>
-
-    <video
-      id="videoPlayer"
-      class="vjs-default-skin"
-      controls
-      preload="auto"
-      muted
-    >
-      <source :src="playerInfo.length > 0? playerInfo[0].url : 'http://210.210.155.35/dr9445/h/h16/02.m3u8'" type="application/x-mpegURL" />
-    </video>
+    <!-- 播放器 -->
+    <video-js id="videoPlayer" class="vjs-default-skin">
+      <source
+        :src="
+          playerInfo.length > 0
+            ? playerInfo[0].url
+            : 'http://210.210.155.35/dr9445/h/h16/02.m3u8'
+        "
+        type="application/x-mpegURL"
+      />
+    </video-js>
   </div>
 </template>
 
 <script setup>
 import { useRouter } from "vue-router";
-import Videojs from "video.js";
+import Videojs from "video.js/dist/video.min.js";
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { useStore } from "vuex";
-import { message } from 'ant-design-vue';
+import { message } from "ant-design-vue";
 
-const router = useRouter();
-const store = useStore();
+// tv详情模块
+const tvPlayModel = () => {
+  const router = useRouter();
+  const store = useStore();
 
-const returnHome = () => {
-  router.push("/");
-};
+  // 回到主页
+  const returnHome = () => {
+    router.push("/");
+  };
 
-let myPlyer = null;
-let isNotPlay = ref(true);
-const playerInfo = computed(() => store.state.watching);
-console.log(playerInfo)
+  //播放器与播放状态初始化
+  let myPlyer = null;
 
-onMounted(() => {
-  // videojs的第一个参数表示的是，文档中video的id
-  myPlyer = Videojs("videoPlayer", {
-    bigPlayButton: false,
-    textTrackDisplay: false,
-    posterImage: true,
-    errorDisplay: false,
-    controlBar: false,
-    muted: true, //静音模式 解决首次页面加载播放。
+  // 播放频道信息
+  const playerInfo = computed(() => store.state.watching);
+
+  onMounted(() => {
+    // videojs的第一个参数表示的是，文档中video的id
+    myPlyer = Videojs("videoPlayer", {
+      controls: true,
+      withCredentials: true,
+      playbackRates: [0.5, 1, 1.25, 1.5, 2, 3], // 倍速播放
+      muted: true, //静音模式 解决首次页面加载播放。
+    });
+
+    // 检测播放成功/失败
+    myPlyer.ready(async function () {
+      try {
+        var promise = await myPlyer.play();
+      } catch (error) {
+        message.error("播放失败，源加载出错啦！换一个看吧~");
+
+        returnHome();
+      }
+    });
   });
 
-  myPlyer.ready(async function () {
-    try {
-      var promise = await myPlyer.play();
-      console.log(promise)
-      isNotPlay.value = false;
-    } catch (error) {
-      console.log(error)
-      message.error('播放失败，源加载出错啦！换一个看吧~');
-      returnHome()
+  onUnmounted(() => {
+    // 离开时将播放器销毁
+    if (myPlyer) {
+      myPlyer.dispose();
     }
   });
-});
-
-onUnmounted(() => {
-  if (myPlyer) {
-    myPlyer.dispose();
-  }
-});
+  return {
+    returnHome,
+    playerInfo,
+  };
+};
+const { returnHome, playerInfo } = tvPlayModel();
 </script>
 
 <style lang="scss">
@@ -79,7 +86,7 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
 
-  .ant-page-header{
+  .ant-page-header {
     width: 100%;
   }
 
@@ -89,15 +96,9 @@ onUnmounted(() => {
   }
 
   .vjs-default-skin {
-    width: 50%;
-  }
-  .example {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-    margin-bottom: 20px;
-    padding: 30px 50px;
-    margin: 20px 0;
+    margin-top: 50px;
+    width: 75%;
+    min-height: 500px;
   }
 }
 </style>

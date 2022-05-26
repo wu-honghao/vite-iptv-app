@@ -4,7 +4,7 @@ import parser from "iptv-playlist-parser";
 const store = createStore({
   state() {
     return {
-      inptList: {},
+      inptList: [],
       watching: [],
     };
   },
@@ -14,7 +14,7 @@ const store = createStore({
       state.inptList = data;
     },
     addWatching(state, data) {
-      state.watching = []
+      state.watching = [];
       state.watching.push(data);
     },
   },

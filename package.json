@@ -2,6 +2,7 @@
   "name": "vite-iptv-app",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://InvolutionBoom-Inc.github.io/vite-iptv-app",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
