@@ -23,6 +23,7 @@
 </template>
 
 <script setup>
+import "video.js/dist/video-js.css";
 import { useRouter } from "vue-router";
 import Videojs from "video.js/dist/video.min.js";
 import { computed, onMounted, onUnmounted, ref } from "vue";
