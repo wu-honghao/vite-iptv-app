@@ -1,0 +1,47 @@
+{
+  "index.html": {
+    "file": "assets/index.ee0b7479.js",
+    "src": "index.html",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/pages/Home/index.vue",
+      "src/pages/TvPlay.vue"
+    ],
+    "css": [
+      "assets/index.993737ea.css"
+    ]
+  },
+  "src/pages/Home/index.vue": {
+    "file": "assets/index.15b151e3.js",
+    "src": "src/pages/Home/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index.7dc6b33a.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/index.7c0a110a.css"
+    ]
+  },
+  "_index.7dc6b33a.js": {
+    "file": "assets/index.7dc6b33a.js",
+    "imports": [
+      "index.html"
+    ],
+    "css": [
+      "assets/index.8a0a6cfb.css"
+    ]
+  },
+  "src/pages/TvPlay.vue": {
+    "file": "assets/TvPlay.747c8ebf.js",
+    "src": "src/pages/TvPlay.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index.7dc6b33a.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/TvPlay.a415eb3a.css"
+    ]
+  }
+}
