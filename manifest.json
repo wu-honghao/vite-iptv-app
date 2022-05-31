@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.e84d594c.js",
+    "file": "assets/index.34eccfa2.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
@@ -13,21 +13,21 @@
     ]
   },
   "src/pages/Home/index.vue": {
-    "file": "assets/index.545e9256.js",
+    "file": "assets/index.4f9d81ca.js",
     "src": "src/pages/Home/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.90ba19b0.js",
+      "_index.50e8aeb9.js",
       "index.html",
-      "_index.f879d6f7.js",
-      "_index.dd95ec36.js"
+      "_index.4b0b8d71.js",
+      "_index.4115ca9a.js"
     ],
     "css": [
       "assets/index.e4b9d850.css"
     ]
   },
-  "_index.90ba19b0.js": {
-    "file": "assets/index.90ba19b0.js",
+  "_index.50e8aeb9.js": {
+    "file": "assets/index.50e8aeb9.js",
     "imports": [
       "index.html"
     ],
@@ -35,20 +35,20 @@
       "assets/index.1ca60f1f.css"
     ]
   },
-  "_index.f879d6f7.js": {
-    "file": "assets/index.f879d6f7.js",
+  "_index.4b0b8d71.js": {
+    "file": "assets/index.4b0b8d71.js",
     "imports": [
-      "_index.90ba19b0.js",
+      "_index.50e8aeb9.js",
       "index.html"
     ],
     "css": [
       "assets/index.a956f62a.css"
     ]
   },
-  "_index.dd95ec36.js": {
-    "file": "assets/index.dd95ec36.js",
+  "_index.4115ca9a.js": {
+    "file": "assets/index.4115ca9a.js",
     "imports": [
-      "_index.90ba19b0.js",
+      "_index.50e8aeb9.js",
       "index.html"
     ],
     "css": [
@@ -56,12 +56,12 @@
     ]
   },
   "src/pages/TvPlay.vue": {
-    "file": "assets/TvPlay.4f25f62e.js",
+    "file": "assets/TvPlay.61b7a3b7.js",
     "src": "src/pages/TvPlay.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.f879d6f7.js",
-      "_index.90ba19b0.js",
+      "_index.4b0b8d71.js",
+      "_index.50e8aeb9.js",
       "index.html"
     ],
     "css": [
@@ -69,16 +69,16 @@
     ]
   },
   "src/pages/Subscribe/index.vue": {
-    "file": "assets/index.8c99f640.js",
+    "file": "assets/index.015c1ee0.js",
     "src": "src/pages/Subscribe/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.90ba19b0.js",
-      "_index.dd95ec36.js",
+      "_index.50e8aeb9.js",
+      "_index.4115ca9a.js",
       "index.html"
     ],
     "css": [
-      "assets/index.d9ca7b2c.css"
+      "assets/index.c3e840c1.css"
     ]
   }
 }
