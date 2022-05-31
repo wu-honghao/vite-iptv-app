@@ -1,47 +1,84 @@
 {
   "index.html": {
-    "file": "assets/index.ee0b7479.js",
+    "file": "assets/index.e84d594c.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
       "src/pages/Home/index.vue",
-      "src/pages/TvPlay.vue"
+      "src/pages/TvPlay.vue",
+      "src/pages/Subscribe/index.vue"
     ],
     "css": [
       "assets/index.993737ea.css"
     ]
   },
   "src/pages/Home/index.vue": {
-    "file": "assets/index.15b151e3.js",
+    "file": "assets/index.545e9256.js",
     "src": "src/pages/Home/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.7dc6b33a.js",
-      "index.html"
+      "_index.90ba19b0.js",
+      "index.html",
+      "_index.f879d6f7.js",
+      "_index.dd95ec36.js"
     ],
     "css": [
-      "assets/index.7c0a110a.css"
+      "assets/index.e4b9d850.css"
     ]
   },
-  "_index.7dc6b33a.js": {
-    "file": "assets/index.7dc6b33a.js",
+  "_index.90ba19b0.js": {
+    "file": "assets/index.90ba19b0.js",
     "imports": [
       "index.html"
     ],
     "css": [
-      "assets/index.8a0a6cfb.css"
+      "assets/index.1ca60f1f.css"
+    ]
+  },
+  "_index.f879d6f7.js": {
+    "file": "assets/index.f879d6f7.js",
+    "imports": [
+      "_index.90ba19b0.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/index.a956f62a.css"
+    ]
+  },
+  "_index.dd95ec36.js": {
+    "file": "assets/index.dd95ec36.js",
+    "imports": [
+      "_index.90ba19b0.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/index.a7882d28.css"
     ]
   },
   "src/pages/TvPlay.vue": {
-    "file": "assets/TvPlay.747c8ebf.js",
+    "file": "assets/TvPlay.4f25f62e.js",
     "src": "src/pages/TvPlay.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.7dc6b33a.js",
+      "_index.f879d6f7.js",
+      "_index.90ba19b0.js",
       "index.html"
     ],
     "css": [
       "assets/TvPlay.a415eb3a.css"
+    ]
+  },
+  "src/pages/Subscribe/index.vue": {
+    "file": "assets/index.8c99f640.js",
+    "src": "src/pages/Subscribe/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_index.90ba19b0.js",
+      "_index.dd95ec36.js",
+      "index.html"
+    ],
+    "css": [
+      "assets/index.d9ca7b2c.css"
     ]
   }
 }
