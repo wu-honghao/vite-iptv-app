@@ -1,33 +1,48 @@
 {
   "index.html": {
-    "file": "assets/index.485921d0.js",
+    "file": "assets/index.22b22ae2.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
       "src/pages/Home/index.vue",
       "src/pages/TvPlay.vue",
-      "src/pages/Subscribe/index.vue"
+      "src/pages/Subscribe/index.vue",
+      "src/pages/Collection.vue"
     ],
     "css": [
       "assets/index.993737ea.css"
     ]
   },
   "src/pages/Home/index.vue": {
-    "file": "assets/index.80c5f423.js",
+    "file": "assets/index.75e1e409.js",
     "src": "src/pages/Home/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.2dcb05e6.js",
+      "_ChannelList.ae5279bc.js",
       "index.html",
-      "_index.efd1a3a7.js",
-      "_index.eb044ed8.js"
+      "_utils.43bedd54.js",
+      "_index.1921a2e7.js",
+      "_index.60d77de9.js",
+      "_FormItemContext.655a09d6.js"
     ],
     "css": [
-      "assets/index.b0312e4d.css"
+      "assets/index.14e2aa8c.css"
     ]
   },
-  "_index.2dcb05e6.js": {
-    "file": "assets/index.2dcb05e6.js",
+  "_ChannelList.ae5279bc.js": {
+    "file": "assets/ChannelList.ae5279bc.js",
+    "imports": [
+      "_index.1921a2e7.js",
+      "index.html",
+      "_utils.43bedd54.js",
+      "_FormItemContext.655a09d6.js"
+    ],
+    "css": [
+      "assets/ChannelList.ac6c3c93.css"
+    ]
+  },
+  "_index.1921a2e7.js": {
+    "file": "assets/index.1921a2e7.js",
     "imports": [
       "index.html"
     ],
@@ -35,33 +50,41 @@
       "assets/index.a0ef8d74.css"
     ]
   },
-  "_index.efd1a3a7.js": {
-    "file": "assets/index.efd1a3a7.js",
+  "_utils.43bedd54.js": {
+    "file": "assets/utils.43bedd54.js",
     "imports": [
-      "_index.2dcb05e6.js",
-      "index.html"
+      "index.html",
+      "_index.1921a2e7.js"
     ],
     "css": [
-      "assets/index.a956f62a.css"
+      "assets/utils.dd6b9d4f.css"
     ]
   },
-  "_index.eb044ed8.js": {
-    "file": "assets/index.eb044ed8.js",
+  "_index.60d77de9.js": {
+    "file": "assets/index.60d77de9.js",
     "imports": [
-      "_index.2dcb05e6.js",
-      "index.html"
+      "index.html",
+      "_FormItemContext.655a09d6.js",
+      "_index.1921a2e7.js"
     ],
     "css": [
       "assets/index.a7882d28.css"
     ]
   },
+  "_FormItemContext.655a09d6.js": {
+    "file": "assets/FormItemContext.655a09d6.js",
+    "imports": [
+      "_index.1921a2e7.js",
+      "index.html"
+    ]
+  },
   "src/pages/TvPlay.vue": {
-    "file": "assets/TvPlay.dff1208a.js",
+    "file": "assets/TvPlay.7972b83c.js",
     "src": "src/pages/TvPlay.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.efd1a3a7.js",
-      "_index.2dcb05e6.js",
+      "_utils.43bedd54.js",
+      "_index.1921a2e7.js",
       "index.html"
     ],
     "css": [
@@ -69,16 +92,29 @@
     ]
   },
   "src/pages/Subscribe/index.vue": {
-    "file": "assets/index.3531eb2e.js",
+    "file": "assets/index.e69d753a.js",
     "src": "src/pages/Subscribe/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.2dcb05e6.js",
-      "_index.eb044ed8.js",
-      "index.html"
+      "_index.1921a2e7.js",
+      "_index.60d77de9.js",
+      "index.html",
+      "_FormItemContext.655a09d6.js"
     ],
     "css": [
-      "assets/index.4354a52f.css"
+      "assets/index.0bb43410.css"
+    ]
+  },
+  "src/pages/Collection.vue": {
+    "file": "assets/Collection.9cc3895f.js",
+    "src": "src/pages/Collection.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ChannelList.ae5279bc.js",
+      "_utils.43bedd54.js",
+      "_index.1921a2e7.js",
+      "index.html",
+      "_FormItemContext.655a09d6.js"
     ]
   }
 }
