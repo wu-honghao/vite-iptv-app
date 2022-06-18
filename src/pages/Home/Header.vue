@@ -125,10 +125,11 @@ onUnmounted(() => {
 
 <style lang="scss">
 #app-header {
-  position: sticky;
+  position: fixed;
   top: -1px;
   background-color: white;
   z-index: 15;
+  width: 100%;
 
   @media screen and (min-width: 0px) and (max-width: 540px) {
     .ant-page-header-heading {

@@ -2,11 +2,12 @@
   <!-- 页头 -->
   <a-page-header
     style="
-      border: 1px solid rgb(235, 237, 240);
-      position: sticky;
+      position: fixed;
       top: -1px;
       background-color: white;
       z-index: 15;
+      width: 100%;
+      min-height: 72px;
     "
     title="your collection"
     @back="back"
@@ -17,6 +18,7 @@
       <ChannelList
         :iptvListAll="collectionChannel"
         modelName="collection"
+        style="padding-top: 72px"
       ></ChannelList>
       <ChannelCard
         :iptvListAll="collectionChannel"

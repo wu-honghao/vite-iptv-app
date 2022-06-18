@@ -49,18 +49,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
-  footer {
-    margin-top: 50px;
-    min-height: 80px;
-    width: 100%;
-    background-color: #1890ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 25px;
-    color: white;
-    font-family: "等线";
-  }
+  height: 100%;
 }
 </style>

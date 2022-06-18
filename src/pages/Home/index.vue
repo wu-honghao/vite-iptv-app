@@ -1,10 +1,18 @@
 <template>
   <div id="app-home">
-    <Header :iptvListAll="iptvListAll"></Header>
+    <Header :iptvListAll="iptvListAll" class="header"></Header>
     <!-- 展示卡片 -->
     <main>
-      <ChannelList :iptvListAll="iptvListAll" modelName="main"></ChannelList>
-      <ChannelCard :iptvListAll="iptvListAll" modelName="main"></ChannelCard>
+      <ChannelList
+        :iptvListAll="iptvListAll"
+        modelName="main"
+        class="main-channel-list"
+      ></ChannelList>
+      <ChannelCard
+        :iptvListAll="iptvListAll"
+        modelName="main"
+        style="padding-top: 80px"
+      ></ChannelCard>
     </main>
   </div>
 </template>
@@ -28,4 +36,21 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#app-home {
+  height: 100%;
+  main {
+    height: 100%;
+  }
+
+  .header {
+    max-height: 120px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .main-channel-list {
+      padding-top: 120px;
+    }
+  }
+}
+</style>

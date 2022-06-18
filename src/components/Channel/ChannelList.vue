@@ -8,7 +8,7 @@
       ref="channelList"
       :style="
         modelName == 'main'
-          ? `overflow-y: scroll;height: 80vh;`
+          ? `overflow-y: scroll;height:100%`
           : `overflow-y: scroll;`
       "
     >
@@ -162,14 +162,16 @@ const testChannel = async (url) => {
       "not-use";
   }
 };
+const testAllChannel = () => {
+  iptvListShow.value.forEach((channel) => {
+    testChannel(channel.url);
+  });
+};
 
 // 滑动到底部显示loading按钮
 const isCanLoad = ref(false);
 const scrollChannelList = (e) => {
-  console.log(
-    Math.ceil(e.srcElement.scrollTop + e.srcElement.clientHeight) >=
-      e.srcElement.scrollHeight
-  );
+  console.log(e.srcElement.scrollTop);
   store.commit("updateChannelListScrollTop", e.srcElement.scrollTop);
 
   if (
@@ -185,6 +187,8 @@ const scrollChannelList = (e) => {
 const channelList = ref(null);
 onUpdated(() => {
   channelList.value.$el.scrollTo(0, store.state.channelListScrollTop);
+
+  testAllChannel();
 });
 </script>
 
@@ -194,6 +198,9 @@ onUpdated(() => {
 }
 
 @media screen and (max-width: 1024px) {
+  .channel-list {
+    height: 100%;
+  }
   .demo-loadmore-list {
     .loading-button {
       // position: fixed;

@@ -14,7 +14,6 @@
         :key="index"
         class="iptv-list"
         v-on:click="toDetails(item.name)"
-        @mouseenter="testChannel(item.url)"
         :style="iptvListTotal < 10 ? 'flex:0.5 0 0;margin-top:50px;' : ''"
       >
         <template #cover>
@@ -67,6 +66,7 @@
       :total="iptvListTotal"
       show-less-items
       hideOnSinglePage
+      @change="changePage"
     />
   </div>
 </template>
@@ -74,7 +74,7 @@
 <script setup>
 // iptv列表展示模块 screen web端
 import { useStore } from "vuex";
-import { computed, onMounted, ref, toRefs, watch } from "vue";
+import { computed, onUpdated, ref, toRefs, watch } from "vue";
 import { useRouter } from "vue-router";
 import { testURL } from "../../http/api/user.js";
 
@@ -133,28 +133,31 @@ const iptvListTotal = computed(() => {
   }
 });
 
-const isTest = ref(false);
 const testChannel = async (url) => {
-  if (isTest.value) {
-    return;
-  }
-
-  isTest.value = true;
-
   iptvListShow.value.find((channel) => channel.url === url).status = "testing";
   try {
     const res = await testURL(url);
 
     iptvListShow.value.find((channel) => channel.url === url).status = "ok";
-
-    isTest.value = false;
   } catch (error) {
     iptvListShow.value.find((channel) => channel.url === url).status =
       "not-use";
-
-    isTest.value = false;
   }
 };
+const testAllChannel = () => {
+  iptvListShow.value.forEach((channel) => {
+    testChannel(channel.url);
+  });
+};
+
+const changePage = () => {
+  console.log(11111);
+  testAllChannel();
+};
+
+onUpdated(() => {
+  testAllChannel();
+});
 </script>
 
 <style lang="scss">
