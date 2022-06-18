@@ -1,4 +1,4 @@
-@charset "UTF-8";body{margin:0;padding:0}#app{font-family:Avenir,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center;color:#2c3e50}#app footer{margin-top:50px;min-height:80px;width:100%;background-color:#1890ff;display:flex;align-items:center;justify-content:center;font-size:25px;color:#fff;font-family:\7b49\7ebf}/*!
+body{margin:0;padding:0}#app{font-family:Avenir,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-align:center;color:#2c3e50;height:100%}/*!
 * 
 * ant-design-vue v3.2.4
 *

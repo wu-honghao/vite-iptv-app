@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.5603e5cc.js",
+    "file": "assets/index.89333e97.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
@@ -10,39 +10,39 @@
       "src/pages/Collection.vue"
     ],
     "css": [
-      "assets/index.993737ea.css"
+      "assets/index.75b9234a.css"
     ]
   },
   "src/pages/Home/index.vue": {
-    "file": "assets/index.438e41bc.js",
+    "file": "assets/index.877a5cac.js",
     "src": "src/pages/Home/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChannelList.1aad9e77.js",
+      "_ChannelList.a62617ba.js",
       "index.html",
-      "_utils.7039df7d.js",
-      "_index.8d96b284.js",
-      "_index.ac5fc9c4.js",
-      "_FormItemContext.7950b9a9.js"
+      "_utils.d705f29b.js",
+      "_index.79bc2c62.js",
+      "_index.81ab9c86.js",
+      "_FormItemContext.526e48b9.js"
     ],
     "css": [
-      "assets/index.14e2aa8c.css"
+      "assets/index.f88c1fa7.css"
     ]
   },
-  "_ChannelList.1aad9e77.js": {
-    "file": "assets/ChannelList.1aad9e77.js",
+  "_ChannelList.a62617ba.js": {
+    "file": "assets/ChannelList.a62617ba.js",
     "imports": [
-      "_index.8d96b284.js",
+      "_index.79bc2c62.js",
       "index.html",
-      "_utils.7039df7d.js",
-      "_FormItemContext.7950b9a9.js"
+      "_utils.d705f29b.js",
+      "_FormItemContext.526e48b9.js"
     ],
     "css": [
-      "assets/ChannelList.761adc4d.css"
+      "assets/ChannelList.9000dc98.css"
     ]
   },
-  "_index.8d96b284.js": {
-    "file": "assets/index.8d96b284.js",
+  "_index.79bc2c62.js": {
+    "file": "assets/index.79bc2c62.js",
     "imports": [
       "index.html"
     ],
@@ -50,41 +50,41 @@
       "assets/index.a0ef8d74.css"
     ]
   },
-  "_utils.7039df7d.js": {
-    "file": "assets/utils.7039df7d.js",
+  "_utils.d705f29b.js": {
+    "file": "assets/utils.d705f29b.js",
     "imports": [
       "index.html",
-      "_index.8d96b284.js"
+      "_index.79bc2c62.js"
     ],
     "css": [
       "assets/utils.dd6b9d4f.css"
     ]
   },
-  "_index.ac5fc9c4.js": {
-    "file": "assets/index.ac5fc9c4.js",
+  "_index.81ab9c86.js": {
+    "file": "assets/index.81ab9c86.js",
     "imports": [
       "index.html",
-      "_FormItemContext.7950b9a9.js",
-      "_index.8d96b284.js"
+      "_FormItemContext.526e48b9.js",
+      "_index.79bc2c62.js"
     ],
     "css": [
       "assets/index.a7882d28.css"
     ]
   },
-  "_FormItemContext.7950b9a9.js": {
-    "file": "assets/FormItemContext.7950b9a9.js",
+  "_FormItemContext.526e48b9.js": {
+    "file": "assets/FormItemContext.526e48b9.js",
     "imports": [
-      "_index.8d96b284.js",
+      "_index.79bc2c62.js",
       "index.html"
     ]
   },
   "src/pages/TvPlay.vue": {
-    "file": "assets/TvPlay.885bc8d7.js",
+    "file": "assets/TvPlay.e2efd88c.js",
     "src": "src/pages/TvPlay.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.8d96b284.js",
-      "_utils.7039df7d.js",
+      "_index.79bc2c62.js",
+      "_utils.d705f29b.js",
       "index.html"
     ],
     "css": [
@@ -92,29 +92,29 @@
     ]
   },
   "src/pages/Subscribe/index.vue": {
-    "file": "assets/index.a46bb820.js",
+    "file": "assets/index.d6987c60.js",
     "src": "src/pages/Subscribe/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.8d96b284.js",
-      "_index.ac5fc9c4.js",
+      "_index.79bc2c62.js",
+      "_index.81ab9c86.js",
       "index.html",
-      "_FormItemContext.7950b9a9.js"
+      "_FormItemContext.526e48b9.js"
     ],
     "css": [
       "assets/index.0bb43410.css"
     ]
   },
   "src/pages/Collection.vue": {
-    "file": "assets/Collection.768dc39a.js",
+    "file": "assets/Collection.e5eeec30.js",
     "src": "src/pages/Collection.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.8d96b284.js",
-      "_ChannelList.1aad9e77.js",
-      "_utils.7039df7d.js",
+      "_index.79bc2c62.js",
+      "_ChannelList.a62617ba.js",
+      "_utils.d705f29b.js",
       "index.html",
-      "_FormItemContext.7950b9a9.js"
+      "_FormItemContext.526e48b9.js"
     ]
   }
 }
