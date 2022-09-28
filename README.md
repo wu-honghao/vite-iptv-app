@@ -1,7 +1,11 @@
-# Vue 3 + Vite
+# IPTV-PROFILES
+Web TV, a broadcasting system for global TV channels, allows users to freely subscribe to live webcasts of countries and specific TV stations they want to watch.
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Development
+```text
+git clone https://github.com/wu-honghao/vite-iptv-app.git
+cd vite-iptv-app
+npm install
+npm run dev
+```
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
