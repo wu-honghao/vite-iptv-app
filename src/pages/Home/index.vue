@@ -3,16 +3,12 @@
     <Header :iptvListAll="iptvListAll" class="header"></Header>
     <!-- 展示卡片 -->
     <main>
-      <ChannelList
+      <ChannelVirtualList
         :iptvListAll="iptvListAll"
         modelName="main"
         class="main-channel-list"
-      ></ChannelList>
-      <ChannelCard
-        :iptvListAll="iptvListAll"
-        modelName="main"
-        style="padding-top: 80px"
-      ></ChannelCard>
+      ></ChannelVirtualList>
+      <ChannelCard :iptvListAll="iptvListAll" modelName="main"></ChannelCard>
     </main>
   </div>
 </template>
@@ -48,6 +44,11 @@ onMounted(() => {
   }
 
   @media screen and (max-width: 1024px) {
+    .main-channel-list {
+      padding-top: 85px;
+    }
+  }
+  @media screen and (max-width: 512px) {
     .main-channel-list {
       padding-top: 120px;
     }

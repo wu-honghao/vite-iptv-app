@@ -6,7 +6,7 @@
       <a-input
         v-model:value="inputURL"
         size="large"
-        placeholder="Download from a URL"
+        placeholder="输入您自己的 IPTV 源,格式为 m3u,如没有可点击右侧按钮寻找..."
         class="input"
         @keyup.enter="download"
       />
@@ -24,31 +24,34 @@
         <template #icon><DeleteOutlined /> </template>
       </a-button>
 
-      <a-button
-        type="primary"
-        size="large"
-        class="download"
-        style="background: #4285f4"
-        @click="download"
-        :loading="downloading"
-      >
-        <template #icon>
-          <DownloadOutlined />
-        </template>
-        Download
-      </a-button>
+      <div>
+        <a-button
+          type="primary"
+          size="large"
+          class="download"
+          style="background: #4285f4"
+          @click="download"
+          :loading="downloading"
+        >
+          <template #icon>
+            <DownloadOutlined />
+          </template>
+          下载
+        </a-button>
 
-      <a-button
-        type="primary"
-        size="large"
-        class="collection"
-        style="background: #4285f4"
-        @click="toCollection"
-      >
-        <template #icon>
-          <StarOutlined />
-        </template>
-      </a-button>
+        <a-button
+          type="primary"
+          size="large"
+          class="collection"
+          style="background: #4285f4"
+          @click="toCollection"
+        >
+          <template #icon>
+            <StarOutlined />
+          </template>
+          收藏页
+        </a-button>
+      </div>
     </a-input-group>
 
     <div class="show-url-box">
@@ -138,6 +141,11 @@ const toCollection = () => {
   justify-content: center;
   height: 80vh;
 
+  .download {
+    margin-top: 50px;
+    margin-right: 10px;
+  }
+
   @media screen and (max-width: 768px) {
     img {
       width: 75vw;
@@ -147,10 +155,6 @@ const toCollection = () => {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-
-      .download {
-        margin-top: 50px;
-      }
 
       .collection {
         margin-top: 50px;
@@ -162,7 +166,7 @@ const toCollection = () => {
     }
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1344px) {
+  @media screen and (min-width: 768px) and (max-width: 1980px) {
     img {
       width: 75vw;
     }
@@ -171,9 +175,7 @@ const toCollection = () => {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      .download {
-        margin-top: 50px;
-      }
+
       .collection {
         margin-top: 50px;
       }
@@ -193,9 +195,7 @@ const toCollection = () => {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      .download {
-        margin-top: 50px;
-      }
+
       .collection {
         margin-top: 50px;
       }
@@ -215,9 +215,7 @@ const toCollection = () => {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      .download {
-        margin-top: 50px;
-      }
+
       .collection {
         margin-top: 50px;
       }

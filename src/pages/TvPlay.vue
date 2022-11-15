@@ -3,7 +3,7 @@
     <!-- 页头 -->
     <a-page-header
       style="border: 1px solid rgb(235, 237, 240)"
-      title="IPTV Details"
+      title="详情"
       :sub-title="playerInfo.length ? playerInfo[0].name : 'random'"
       @back="back"
     />

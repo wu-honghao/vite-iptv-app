@@ -17,13 +17,17 @@
         :style="iptvListTotal < 10 ? 'flex:0.5 0 0;margin-top:50px;' : ''"
       >
         <template #cover>
-          <a-empty :description="null" v-if="!item.tvg.logo" />
+          <a-empty
+            :description="null"
+            v-if="!item.tvg.logo || item.tvg.logo === 'error'"
+          />
 
           <img
             v-else
             style="max-width: 100px; max-height: 100px"
             alt="example"
             :src="item.tvg.logo ? item.tvg.logo : ''"
+            @error="onPhotoError(item)"
           />
         </template>
         <a-card-meta :title="null">
@@ -87,9 +91,6 @@ const props = defineProps({
 });
 
 const { iptvListAll } = toRefs(props);
-watch(iptvListAll, (item) => {
-  console.log(item);
-});
 
 const store = useStore();
 const router = useRouter();
@@ -151,13 +152,18 @@ const testAllChannel = () => {
 };
 
 const changePage = () => {
-  console.log(11111);
   testAllChannel();
 };
 
 onUpdated(() => {
   testAllChannel();
 });
+
+const onPhotoError = (errorItem) => {
+  iptvListShow.value.find((item) => {
+    return errorItem === item;
+  }).tvg.logo = "error";
+};
 </script>
 
 <style lang="scss">

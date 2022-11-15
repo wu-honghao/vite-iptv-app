@@ -1,40 +1,47 @@
 <template>
   <div class="channel-list">
-    <a-list
-      class="demo-loadmore-list"
-      item-layout="horizontal"
-      :data-source="iptvListShow"
-      @scroll="scrollChannelList"
+    <VirtualList
+      :data="iptvListShow"
+      :itemSize="120"
+      :poolBuffer="20"
       ref="channelList"
-      :style="
-        modelName == 'main'
-          ? `overflow-y: scroll;height:100%`
-          : `overflow-y: scroll;`
-      "
+      class="demo-loadmore-list"
+      style="height: 93%"
+      @scroll="scrollChannelList"
+      dataKey="tvg"
     >
-      <template #loadMore>
+      <template v-slot="{ item, index }">
         <div
-          :style="{
-            textAlign: 'center',
-            height: '50px',
-            lineHeight: '50px',
-          }"
-          class="loading-button"
+          class="channel-list_itembox"
+          @click="(e) => toDetails(item.name, e)"
         >
-          <a-button
-            v-if="isCanLoad == true && modelName == 'main'"
-            @click="
-              () => {
-                currentPage++;
-              }
+          <div class="channel-list_photoItem">
+            <a-empty
+              :description="null"
+              v-if="!item.tvg.logo || item.tvg.logo === 'error'"
+              class="channel-list_empty"
+            />
+            <img
+              :src="item.tvg.logo ? item.tvg.logo : ''"
+              v-else
+              @error="onPhotoError(item)"
+              class="channel-list_tvg-logo"
+            />
+          </div>
+
+          <a class="channel-list_itemname" style="flex: 0 0 30%">{{
+            item.name
+          }}</a>
+
+          <div
+            style="
+              flex: 0 0 20%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
             "
-            >loading more</a-button
+            class="channel-list_right"
           >
-        </div>
-      </template>
-      <template #renderItem="{ item }">
-        <a-list-item>
-          <template #actions>
             <a-tooltip
               style="z-index: 0"
               :title="
@@ -74,35 +81,37 @@
               v-if="modelName == 'collection'"
               >取消收藏</a
             >
-          </template>
-
-          <a-list-item-meta
-            @click="toDetails(item.name)"
-            :description="item ? 'channel from ' + item.tvg.country : ''"
-          >
-            <template #title>
-              <a>{{ item.name }}</a>
-            </template>
-
-            <template #avatar>
-              <a-empty
-                :description="null"
-                v-if="!item.tvg.logo || item.tvg.logo === 'error'"
-              />
-              <img
-                :src="item.tvg.logo ? item.tvg.logo : ''"
-                v-else
-                @error="onPhotoError(item)"
-              />
-            </template>
-          </a-list-item-meta>
-        </a-list-item>
+          </div>
+        </div>
       </template>
-    </a-list>
+    </VirtualList>
+    <div
+      :style="{
+        textAlign: 'center',
+        height: '5%',
+        lineHeight: '50px',
+      }"
+      class="loading-button"
+    >
+      <a-button
+        v-if="isCanLoad"
+        @click="
+          () => {
+            currentPage++;
+          }
+        "
+        type="primary"
+        >加载更多频道</a-button
+      >
+      <div v-else>欢迎访问 iptv.hellozero.site</div>
+    </div>
   </div>
 </template>
-
+  
 <script setup>
+import { onMounted, reactive } from "vue";
+import ChannelListItem from "./ChannelListItem.vue";
+import { VirtualList } from "vue3-virtual-list";
 // iptv虚拟列表 screen 手机端
 import "swiper/css";
 import { computed, onUpdated, ref, toRefs, watch } from "vue";
@@ -139,11 +148,22 @@ const iptvListShow = computed(() => {
     return iptvListAll.value.slice(0, currentPage.value * pageSize.value);
   }
 });
+console.log(iptvListShow);
+const handlerScroll = (val) => {
+  console.log(val);
+};
 
 const rateValue = ref(2);
 
 // 去详情页
-const toDetails = (name) => {
+const toDetails = (name, e) => {
+  if (
+    e.path.find((item) => {
+      return item.className === "channel-list_right";
+    })
+  ) {
+    return;
+  }
   store.commit(
     "addWatching",
     iptvListAll.value.find((item) => item.name === name)
@@ -176,9 +196,10 @@ const scrollChannelList = (e) => {
   store.commit("updateChannelListScrollTop", e.srcElement.scrollTop);
 
   if (
-    Math.round(e.srcElement.scrollTop + e.srcElement.clientHeight) <=
+    Math.round(e.srcElement.scrollTop + e.srcElement.clientHeight) >=
     e.srcElement.scrollHeight
   ) {
+    console.log(1111111111);
     isCanLoad.value = true;
   } else {
     isCanLoad.value = false;
@@ -187,18 +208,22 @@ const scrollChannelList = (e) => {
 
 const channelList = ref(null);
 onUpdated(() => {
-  channelList.value.$el.scrollTo(0, store.state.channelListScrollTop);
+  const { channelListScrollTop } = store.state;
+  channelList.value.$el.scrollTo(
+    0,
+    channelListScrollTop === 0 ? 1 : channelListScrollTop
+  );
 
   testAllChannel();
 });
 
-const onPhotoError = (errorItem) => {
+const onPhotoError = async (errorItem) => {
   iptvListShow.value.find((item) => {
-    return errorItem === item;
+    return errorItem.name === item.name;
   }).tvg.logo = "error";
 };
 </script>
-
+  
 <style lang="scss">
 .ant-tooltip {
   z-index: 0;
@@ -207,15 +232,38 @@ const onPhotoError = (errorItem) => {
 @media screen and (max-width: 1024px) {
   .channel-list {
     height: 100%;
+
+    &_tvg-logo {
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+    &_itembox {
+      display: flex;
+      border-bottom: 1px solid rgb(235, 237, 240);
+      height: 100%;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    &_photoItem {
+      height: 80%;
+      width: 20%;
+      line-height: 80px;
+    }
+
+    &_empty {
+      display: flex;
+      justify-content: center;
+    }
   }
   .demo-loadmore-list {
     .loading-button {
-      // position: fixed;
       position: relative;
       bottom: 0;
       width: 100%;
       z-index: 15;
-      button {
+      > :first-child {
         width: 100%;
         height: 100%;
         color: white;
@@ -229,6 +277,7 @@ const onPhotoError = (errorItem) => {
       height: 12px;
       border-radius: 50%;
       position: relative;
+      margin-right: 10px;
     }
     .success {
       background: rgb(66, 133, 244);
@@ -325,3 +374,4 @@ const onPhotoError = (errorItem) => {
   }
 }
 </style>
+  
