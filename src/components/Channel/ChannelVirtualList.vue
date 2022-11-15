@@ -26,12 +26,16 @@
               v-else
               @error="onPhotoError(item)"
               class="channel-list_tvg-logo"
+              alt="tvg_logo"
             />
           </div>
 
-          <a class="channel-list_itemname" style="flex: 0 0 30%">{{
-            item.name
-          }}</a>
+          <div
+            class="channel-list_itemname"
+            style="flex: 0 0 30%; color: #8c8c8c"
+          >
+            {{ item.name }}
+          </div>
 
           <div
             style="
@@ -46,12 +50,12 @@
               style="z-index: 0"
               :title="
                 item.status === 'ok'
-                  ? 'url ok'
+                  ? '频道可用'
                   : item.status === 'not-use'
-                  ? 'url do not use'
+                  ? '频道不可用'
                   : item.status === 'not-test'
-                  ? 'url not tested'
-                  : 'url testing'
+                  ? '频道未检测'
+                  : '频道测试中'
               "
             >
               <div
@@ -68,19 +72,21 @@
                 "
               ></div>
             </a-tooltip>
-
-            <a
+            <a-button
               key="list-loadmore-edit"
               @click="toCollect(item)"
               v-if="modelName == 'main'"
-              >收藏本台</a
+              type="link"
+              >收藏本台</a-button
             >
-            <a
+            <a-button
               key="list-loadmore-edit"
               @click="toUnCollect(item)"
               v-if="modelName == 'collection'"
-              >取消收藏</a
+              type="link"
             >
+              取消收藏
+            </a-button>
           </div>
         </div>
       </template>
@@ -110,7 +116,6 @@
   
 <script setup>
 import { onMounted, reactive } from "vue";
-import ChannelListItem from "./ChannelListItem.vue";
 import { VirtualList } from "vue3-virtual-list";
 // iptv虚拟列表 screen 手机端
 import "swiper/css";
@@ -148,10 +153,6 @@ const iptvListShow = computed(() => {
     return iptvListAll.value.slice(0, currentPage.value * pageSize.value);
   }
 });
-console.log(iptvListShow);
-const handlerScroll = (val) => {
-  console.log(val);
-};
 
 const rateValue = ref(2);
 
@@ -199,7 +200,6 @@ const scrollChannelList = (e) => {
     Math.round(e.srcElement.scrollTop + e.srcElement.clientHeight) >=
     e.srcElement.scrollHeight
   ) {
-    console.log(1111111111);
     isCanLoad.value = true;
   } else {
     isCanLoad.value = false;
@@ -234,8 +234,8 @@ const onPhotoError = async (errorItem) => {
     height: 100%;
 
     &_tvg-logo {
-      max-width: 100px;
-      max-height: 100px;
+      max-width: 70px;
+      max-height: 70px;
     }
 
     &_itembox {
@@ -255,6 +255,13 @@ const onPhotoError = async (errorItem) => {
     &_empty {
       display: flex;
       justify-content: center;
+
+      > :first-child {
+        > :first-child {
+          max-width: 70px;
+          max-height: 70px;
+        }
+      }
     }
   }
   .demo-loadmore-list {
@@ -273,8 +280,8 @@ const onPhotoError = async (errorItem) => {
 
     .url-status {
       content: "";
-      width: 12px;
-      height: 12px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       position: relative;
       margin-right: 10px;

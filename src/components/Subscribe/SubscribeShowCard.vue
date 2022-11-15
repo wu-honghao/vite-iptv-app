@@ -11,7 +11,7 @@
       }}</a
     >
 
-    <a-tooltip :title="item.status === true ? 'url ok' : 'url do not use'">
+    <a-tooltip :title="item.status === true ? '源可用' : '源不可用'">
       <div
         class="url-status"
         :class="item.status === true ? 'success' : 'error'"

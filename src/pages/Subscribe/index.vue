@@ -1,6 +1,6 @@
 <template>
   <div id="app-subscribe">
-    <img src="/icons/iptv-profiles.png" />
+    <img src="/icons/iptv-profiles.png" alt="logo" />
 
     <a-input-group compact>
       <a-input

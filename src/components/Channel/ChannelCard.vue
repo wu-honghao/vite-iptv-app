@@ -35,12 +35,12 @@
             <a-tooltip
               :title="
                 item.status === 'ok'
-                  ? 'url ok'
+                  ? '频道可用'
                   : item.status === 'not-use'
-                  ? 'url do not use'
+                  ? '频道不可用'
                   : item.status === 'not-test'
-                  ? 'url not tested'
-                  : 'url testing'
+                  ? '频道未检测'
+                  : '频道测试中'
               "
             >
               <div
@@ -229,8 +229,8 @@ const onPhotoError = (errorItem) => {
           align-items: center;
           .url-status {
             content: "";
-            width: 12px;
-            height: 12px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
             position: relative;
           }

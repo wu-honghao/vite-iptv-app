@@ -9,7 +9,7 @@
       width: 100%;
       min-height: 72px;
     "
-    title="your collection"
+    title="你的收藏"
     @back="back"
   />
 
@@ -26,7 +26,7 @@
       ></ChannelCard>
     </div>
 
-    <a-empty description="no collection" v-else style="margin-top: 50px" />
+    <a-empty description="暂无" v-else style="margin-top: 80px" />
   </main>
 </template>
 
