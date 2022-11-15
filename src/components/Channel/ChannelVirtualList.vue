@@ -11,10 +11,7 @@
       dataKey="tvg"
     >
       <template v-slot="{ item, index }">
-        <div
-          class="channel-list_itembox"
-          @click="(e) => toDetails(item.name, e)"
-        >
+        <div class="channel-list_itembox" @click="toDetails(item.name)">
           <div class="channel-list_photoItem">
             <a-empty
               :description="null"
@@ -59,7 +56,7 @@
               "
             >
               <div
-                @click="testChannel(item.url)"
+                @click.stop="testChannel(item.url)"
                 class="url-status"
                 :class="
                   item.status === 'ok'
@@ -74,14 +71,14 @@
             </a-tooltip>
             <a-button
               key="list-loadmore-edit"
-              @click="toCollect(item)"
+              @click.stop="toCollect(item)"
               v-if="modelName == 'main'"
               type="link"
               >收藏本台</a-button
             >
             <a-button
               key="list-loadmore-edit"
-              @click="toUnCollect(item)"
+              @click.stop="toUnCollect(item)"
               v-if="modelName == 'collection'"
               type="link"
             >
@@ -157,17 +154,10 @@ const iptvListShow = computed(() => {
 const rateValue = ref(2);
 
 // 去详情页
-const toDetails = (name, e) => {
-  if (
-    e.path.find((item) => {
-      return item.className === "channel-list_right";
-    })
-  ) {
-    return;
-  }
+const toDetails = (name) => {
   store.commit(
     "addWatching",
-    iptvListAll.value.find((item) => item.name === name)
+    iptvListShow.value.find((item) => item.name === name)
   );
 
   router.push("/TvPlayPage");

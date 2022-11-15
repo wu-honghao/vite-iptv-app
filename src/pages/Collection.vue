@@ -15,11 +15,11 @@
 
   <main>
     <div v-if="collectionChannel != null">
-      <ChannelList
+      <ChannelVirtualList
         :iptvListAll="collectionChannel"
         modelName="collection"
         style="padding-top: 72px"
-      ></ChannelList>
+      ></ChannelVirtualList>
       <ChannelCard
         :iptvListAll="collectionChannel"
         modelName="collection"

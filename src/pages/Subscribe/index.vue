@@ -11,7 +11,7 @@
         @keyup.enter="download"
       />
 
-      <a-tooltip title="please copy git url">
+      <a-tooltip title="源寻找">
         <a-button size="large">
           <template #icon
             ><a href="https://github.com/iptv-org/iptv" target="_blank"
