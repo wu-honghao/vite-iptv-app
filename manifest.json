@@ -1,6 +1,6 @@
 {
   "index.html": {
-    "file": "assets/index.89333e97.js",
+    "file": "assets/index.42ee1e3f.js",
     "src": "index.html",
     "isEntry": true,
     "dynamicImports": [
@@ -14,77 +14,80 @@
     ]
   },
   "src/pages/Home/index.vue": {
-    "file": "assets/index.877a5cac.js",
+    "file": "assets/index.ff5efa89.js",
     "src": "src/pages/Home/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_ChannelList.a62617ba.js",
+      "_ChannelVirtualList.6db83621.js",
       "index.html",
-      "_utils.d705f29b.js",
-      "_index.79bc2c62.js",
-      "_index.81ab9c86.js",
-      "_FormItemContext.526e48b9.js"
+      "_utils.d558c0f6.js",
+      "_index.950c1ea9.js",
+      "_index.a2ca4569.js",
+      "_index.cb7ce25c.js"
     ],
     "css": [
-      "assets/index.f88c1fa7.css"
+      "assets/index.a388eed5.css"
     ]
   },
-  "_ChannelList.a62617ba.js": {
-    "file": "assets/ChannelList.a62617ba.js",
+  "_ChannelVirtualList.6db83621.js": {
+    "file": "assets/ChannelVirtualList.6db83621.js",
     "imports": [
-      "_index.79bc2c62.js",
+      "_index.950c1ea9.js",
+      "_index.a2ca4569.js",
       "index.html",
-      "_utils.d705f29b.js",
-      "_FormItemContext.526e48b9.js"
+      "_utils.d558c0f6.js"
     ],
     "css": [
-      "assets/ChannelList.9000dc98.css"
+      "assets/ChannelVirtualList.fa0127cf.css"
     ]
   },
-  "_index.79bc2c62.js": {
-    "file": "assets/index.79bc2c62.js",
+  "_index.950c1ea9.js": {
+    "file": "assets/index.950c1ea9.js",
     "imports": [
       "index.html"
     ],
     "css": [
-      "assets/index.a0ef8d74.css"
+      "assets/index.fe7464d1.css"
     ]
   },
-  "_utils.d705f29b.js": {
-    "file": "assets/utils.d705f29b.js",
+  "_index.a2ca4569.js": {
+    "file": "assets/index.a2ca4569.js",
     "imports": [
-      "index.html",
-      "_index.79bc2c62.js"
+      "_index.950c1ea9.js",
+      "index.html"
     ],
     "css": [
-      "assets/utils.dd6b9d4f.css"
+      "assets/index.a18cc309.css"
     ]
   },
-  "_index.81ab9c86.js": {
-    "file": "assets/index.81ab9c86.js",
+  "_utils.d558c0f6.js": {
+    "file": "assets/utils.d558c0f6.js",
     "imports": [
       "index.html",
-      "_FormItemContext.526e48b9.js",
-      "_index.79bc2c62.js"
+      "_index.950c1ea9.js"
+    ],
+    "css": [
+      "assets/utils.6e3b9d33.css"
+    ]
+  },
+  "_index.cb7ce25c.js": {
+    "file": "assets/index.cb7ce25c.js",
+    "imports": [
+      "index.html",
+      "_index.a2ca4569.js",
+      "_index.950c1ea9.js"
     ],
     "css": [
       "assets/index.a7882d28.css"
     ]
   },
-  "_FormItemContext.526e48b9.js": {
-    "file": "assets/FormItemContext.526e48b9.js",
-    "imports": [
-      "_index.79bc2c62.js",
-      "index.html"
-    ]
-  },
   "src/pages/TvPlay.vue": {
-    "file": "assets/TvPlay.e2efd88c.js",
+    "file": "assets/TvPlay.3fa5aa42.js",
     "src": "src/pages/TvPlay.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.79bc2c62.js",
-      "_utils.d705f29b.js",
+      "_index.950c1ea9.js",
+      "_utils.d558c0f6.js",
       "index.html"
     ],
     "css": [
@@ -92,29 +95,29 @@
     ]
   },
   "src/pages/Subscribe/index.vue": {
-    "file": "assets/index.d6987c60.js",
+    "file": "assets/index.c95bbaa8.js",
     "src": "src/pages/Subscribe/index.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.79bc2c62.js",
-      "_index.81ab9c86.js",
+      "_index.950c1ea9.js",
+      "_index.cb7ce25c.js",
       "index.html",
-      "_FormItemContext.526e48b9.js"
+      "_index.a2ca4569.js"
     ],
     "css": [
-      "assets/index.0bb43410.css"
+      "assets/index.a940c728.css"
     ]
   },
   "src/pages/Collection.vue": {
-    "file": "assets/Collection.e5eeec30.js",
+    "file": "assets/Collection.a7a8b94d.js",
     "src": "src/pages/Collection.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_index.79bc2c62.js",
-      "_ChannelList.a62617ba.js",
-      "_utils.d705f29b.js",
+      "_index.950c1ea9.js",
+      "_ChannelVirtualList.6db83621.js",
+      "_utils.d558c0f6.js",
       "index.html",
-      "_FormItemContext.526e48b9.js"
+      "_index.a2ca4569.js"
     ]
   }
 }
